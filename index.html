@@ -17,6 +17,8 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            -webkit-user-select: none; /* Previne selectarea textului pe mobil la tap rapid */
+            user-select: none;
         }
 
         /* Containerul principal al rugăciunii */
@@ -29,6 +31,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             text-align: center;
             border: 1px solid #3d3d3d;
+            box-sizing: border-box;
         }
 
         /* Stilul textului rugăciunii */
@@ -44,20 +47,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 200px;
+            max-width: 240px;
             margin: 0 auto;
         }
 
-        /* Săgețile stânga/dreapta */
+        /* Săgețile stânga/dreapta - optimizate pentru ecran tactil */
         .arrow {
-            font-size: 2rem;
+            font-size: 2.5rem; /* Dimensiune mărită pentru vizibilitate pe mobil */
             color: #d4af37; /* Culoare aurie/chihlimbar stins */
             cursor: pointer;
-            user-select: none;
             transition: color 0.2s ease;
             background: none;
             border: none;
-            padding: 0 15px;
+            padding: 15px 25px; /* Zonă de atingere extinsă pentru degete */
+            touch-action: manipulation; /* Optimizează comportamentul la tap pe mobil */
         }
 
         .arrow:hover {
@@ -73,7 +76,7 @@
         .page-counter {
             font-size: 1.1rem;
             color: #a0a0a0;
-            margin-top: 15px;
+            margin-top: 20px;
             font-family: sans-serif;
         }
 
@@ -92,7 +95,7 @@
         }
 
         .final-text {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #d4af37;
             margin-top: 15px;
         }
@@ -102,15 +105,49 @@
             background-color: #333;
             color: #d4af37;
             border: 1px solid #d4af37;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Georgia', serif;
-            margin-top: 15px;
+            margin-top: 20px;
+            font-size: 1rem;
+            touch-action: manipulation;
         }
+        
         .reset-btn:hover {
             background-color: #d4af37;
             color: #262626;
+        }
+
+        /* Ajustări specifice pentru ecrane de telefon mobil (ecrane sub 480px) */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .prayer-container {
+                padding: 30px 15px;
+            }
+
+            .prayer-text {
+                font-size: 1.15rem; /* Dimensiune text adaptată pentru ecrane înguste */
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .arrow {
+                font-size: 2.2rem;
+                padding: 10px 20px;
+            }
+
+            .page-counter {
+                font-size: 1rem;
+                margin-top: 15px;
+            }
+
+            .icon-image {
+                max-height: 350px; /* Limitează înălțimea icoanei pe ecrane foarte scurte */
+            }
         }
     </style>
 </head>
