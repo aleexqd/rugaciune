@@ -460,13 +460,12 @@ Pe împăratul ceresc, pe Care Îl laudă oștile îngerești, lăudați-L și-L
 </div>
 
         <!-- PAGINA 24 (SFÂRȘIT) -->
-        <div class="page" id="page-24">
         <img
-    class="icon-final"
-    src="https://basilica.ro/wp-content/uploads/2015/08/cele-mai-vechi-icoane-ale-maicii.jpg"
-    alt="Icoana Maicii Domnului"
-    onclick="goToPravila()">    
-        </div>
+class="icon-final"
+src="https://basilica.ro/wp-content/uploads/2015/08/cele-mai-vechi-icoane-ale-maicii.jpg"
+alt="Icoana Maicii Domnului"
+onclick="goToPravila()"
+style="cursor:pointer;">
 
     </div>
 
@@ -514,6 +513,23 @@ Pe împăratul ceresc, pe Care Îl laudă oștile îngerești, lăudați-L și-L
         currentPage += direction;
         if (currentPage < 1) currentPage = 1;
         if (currentPage > totalPages + 1) currentPage = totalPages + 1;
+
+function goToPravila() {
+
+    const icoana = document.querySelector(".icon-final");
+
+    icoana.style.transition = "all .2s ease";
+    icoana.style.transform = "scale(1.03)";
+    icoana.style.boxShadow = "0 0 30px gold";
+
+    setTimeout(function () {
+
+        window.location.href = "../tranzitie/";
+
+    }, 200);
+
+}
+		
         updatePage();
     }
 
