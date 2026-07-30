@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraclisul Maicii Domnului</title>
+    <style>
+        :root {
+    --bg-color: #262626;
+    --card-bg: #262626;
+    --text-color: #f5f5f5;
+    --accent-color: #d4af37;   /* auriu discret */
+    --muted-color: #b0b0b0;
+    --border-color: #3d3d3d;
+}
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Prevvine scroll-ul general pe ecran */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            height: 90vh;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.5rem 2rem 1.5rem 2rem;
+            position: relative;
+        }
+
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            max-height: 100%;
+            overflow-y: auto; /* Permite scroll intern DOAR daca textul depaseste un ecran foarte mic */
+            line-height: 1.35;
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Stiluri text liturgic */
+        .page h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .page p {
+            margin-bottom: 0.35rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .instruction {
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+
+        .icon-final {
+            max-width: 100%;
+            max-height: 60vh;
+            border-radius: 4px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            margin-top: 1rem;
+        }
+
+        /* Zona Navigare */
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 120px;
+        }
+
+        .btn-nav {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            cursor: pointer;
+            user-select: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-nav:hover {
+            opacity: 0.7;
+        }
+
+        .btn-nav:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .page-counter {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+            margin-top: 0.3rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="content-area">
+        
+        <!-- PAGINA 1 -->
+        <div class="page active" id="page-1">
+            <center>Veniți să ne închinăm Împăratului nostru Dumnezeu!</p>
+Veniți să ne închinăm și să cădem la Hristos, Împăratul nostru, Dumnezeu!</p>
+Veniți să ne închinăm și să cădem la Însuși Hristos, Împăratul și Dumnezeul Nostru!</p></center>
+
+<h5 style="color: #d4af37; text-align: center;">(cu 3 închinăciuni)</h5>
+            <!-- AICI INSEREAZĂ RUGĂCIUNILE INTRODUCTIVE (Veniți să ne închinăm...) -->
+        </div>
+
+        <!-- PAGINA 2 -->
+        <div class="page" id="page-2">
+            <h3>Psalmul 142</h3>
+Doamne, auzi rugăciunea mea, ascultă cererea mea, întru credincioșia Ta; auzi-mă, întru dreptatea Ta. Să nu intri la judecată cu robul Tău, că nimeni din cei vii nu-i drept înaintea Ta. Vrăjmașul prigonește sufletul meu și viața mea o calcă în picioare; făcutu-m-a să locuiesc în întuneric ca morții cei din veacuri. Mâhnit e duhul în mine și inima mea încremenită înlăuntrul meu. Adusu-mi-am aminte de zilele cele de demult; cugetat-am la toate lucrurile Tale, la faptele mâinilor Tale m-am gândit. Tins-am către Tine mâinile mele, sufletul meu, ca un pământ însetoșat. Degrab auzi-mă, Doamne, că a slăbit duhul meu. Nu-Ți întoarce fața Ta de la mine, ca să nu mă asemăn celor ce se coboară în mormânt. Fă să aud dimineața mila Ta, că la Tine mi-e nădejdea. Arată-mi calea pe care voi merge, că la Tine am ridicat sufletul meu. Scapă-mă de vrăjmașii mei, că la Tine alerg, Doamne. Învață-mă să fac voia Ta, că Tu ești Dumnezeul meu. Duhul Tău cel bun să mă povățuiască la pământul dreptății. Pentru numele Tău, Doamne, dăruiește-mi viață. Întru dreptatea Ta scoate din necaz sufletul meu. Fă bunătate de stârpește pe vrăjmașii mei și pierde pe toți cei ce necăjesc sufletul meu, că eu sunt robul Tău.
+            <!-- AICI INSEREAZĂ PSALMUL 142 -->
+        </div>
+
+        <!-- PAGINA 3 -->
+        <div class="page" id="page-3">
+            <p style="text-align: center;">Dumnezeu este Domnul și S-a arătat nouă, bine este cuvântat Cel Ce vine întru numele Domnului.</p>
+
+<h6><p style="color: #d4af37; text-align: center;">(de 3 ori)</p></h6>
+
+
+<h6>Apoi troparele acestea, glasul al 4-lea:</h6>
+
+Către Născătoarea de Dumnezeu, acum cu osârdie să alergăm noi păcătoșii și smeriții și să cădem cu pocăință, strigând din adâncul sufletului: stăpână, ajută-ne, milostivindu-te spre noi; grăbește că pierim sub mulțimea păcatelor; nu întoarce pe robii tăi deșerți, că pe tine singură nădejde te-am câștigat.
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă Tatălui și Fiului și Sfântului Duh,</p></h5>
+
+Către Născătoarea de Dumnezeu acum cu osârdie să alergăm noi, păcătoșii și smeriții, și să cădem cu pocăință, strigând din adâncul sufletului: Stăpână, ajută-ne, milostivindu-te spre noi; grăbește, că pierim de mulțimea păcatelor; nu întoarce pe robii tăi deșerți, că pe tine singură nădejde te-am câștigat.</color>
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Și acum și pururea și în vecii vecilor. Amin!</h5>
+
+Nu vom tăcea, Născătoare de Dumnezeu, pururea a spune puterile tale noi, nevrednicii. Că, de nu ai fi stat tu înainte rugându-te, cine ne-ar fi izbăvit pe noi din atâtea nevoi? Sau cine ne-ar fi păzit până acum slobozi? Nu ne vom depărta de la tine, Stăpână, că tu izbăvești pe robii tăi pururea din toate nevoile.
+            <!-- AICI INSEREAZĂ "Dumnezeu este Domnul" ȘI TROPARELE -->
+        </div>
+
+        <!-- PAGINA 4 -->
+        <div class="page" id="page-4">
+            <h3>Psalmul 50</h3>
+<p style="font-size: 15px;">Miluiește-mă, Dumnezeule, după mare mila Ta și după mulțimea îndurărilor Tale șterge fărădelegea mea. Mai vârtos mă spală de fărădelegea mea și de păcatul meu mă curățește. Că fărădelegea mea eu o cunosc și păcatul meu înaintea mea este pururea.Ție unuia am greșit și rău înaintea Ta am făcut, așa încât drept ești Tu întru cuvintele Tale și biruitor când vei judeca Tu.Că iată, întru fărădelegi m-am zămislit și în păcate m-a născut maica mea. Că, iată, adevărul ai iubit; cele nearătate și cele ascunse ale înțelepciunii Tale mi-ai arătat mie. Stropi-mă-vei cu isop și mă voi curăți; spăla-mă-vei și mai vârtos decât zăpada mă voi albi. Auzului meu vei da bucurie și veselie; bucura-se-vor oasele cele smerite. Întoarce fața Ta de către păcatele mele și toate fărădelegile mele șterge-le. Inimă curată zidește intru mine, Dumnezeule, și duh drept înnoiește întru cele dinlăuntru ale mele. Nu mă lepăda de la fața Ta și Duhul Tău cel Sfânt nu-l lua de la mine. Dă-mi mie bucuria mântuirii Tale și cu duh stăpânitor mă întărește. Învăța-voi pe cei fără de lege căile Tale și cei necredincioși la Tine se vor întoarce. Izbăvește-mă de vărsarea de sânge, Dumnezeule, Dumnezeul mântuirii mele; bucura-se-va limba mea de dreptatea Ta. Doamne, buzele mele vei deschide și gura mea va vesti lauda Ta. Că, de ai fi voit jertfă, Ți-aș fi dat; arderile de tot nu le vei binevoi. Jertfa lui Dumnezeu: duhul umilit; inima înfrântă și smerită Dumnezeu nu o va urgisi. Fă bine, Doamne, întru bunăvoirea Ta, Sionului, și să se zidească zidurile Ierusalimului. Atunci vei binevoi jertfa dreptății, prinosul și arderile de tot; atunci vor pune pe altarul Tău viței.</p>
+            <!-- AICI INSEREAZĂ PSALMUL 50 -->
+        </div>
+
+        <!-- PAGINA 5 -->
+        <div class="page" id="page-5">
+            <p>Apa trecând-o ca pe uscat și din răutatea egiptenilor scăpând, israeliteanul striga: Izbăvitorului și Dumnezeului nostru să-I cântăm.</p>
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Stih: Preasfântă Născătoare de Dumnezeu, miluiește-ne pe noi.</h5>
+
+
+<p>De multe ispite fiind cuprins, către tine alerg căutând mântuire; o, Maică a Cuvântului și Fecioară, de rele și de nevoi mântuiește-mă.</p>
+
+<p>Asupririle chinurilor mă tulbură și de multe scârbe se umple sufletul meu; alină-le, Fecioară, cu liniștea Fiului și Dumnezeului tău, ceea ce ești cu totul fără de prihană.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+
+<p>Pe tine, ceea ce ai născut pe Mântuitorul și Dumnezeu, te rog, Fecioară, izbăvește-mă din nevoi, că la tine scăpând acum, îmi tind și sufletul și gândul meu.</p>
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Și acum...</h5>
+
+<p>Fiind bolnav cu trupul și cu sufletul, cercetării celei dumnezeiești și purtării tale de grijă învrednicește-mă tu, Maica lui Dumnezeu, ca ceea ce ești bună și Născătoarea Celui bun.</p>
+            <!-- AICI INSEREAZĂ CANTAREA 1 -->
+        </div>
+
+        <!-- PAGINA 6 -->
+        <div class="page" id="page-6">
+            <p>Doamne, Cel Ce ai făcut cele de deasupra crugului ceresc și ai zidit Biserica, Tu pe mine mă întărește întru dragostea Ta; că Tu ești marginea doririlor și credincioșilor întărire, «Unule, iubitorule de oameni».</p>
+
+<p>Folositoare și acoperământ vieții mele te pun pe tine, Născătoare de Dumnezeu Fecioară; tu mă îndreptează la adăpostirea ta, ceea ce ești pricina bunătăților și credincioșilor întărire, una întru tot lăudată.</p>
+
+<p>Te rog, Fecioară, risipește-mi tulburarea sufletului și viforul necazurilor mele, că tu, Mireasă dumnezeiască, pe Hristos începătorul liniștii ai născut, ceea ce ești de Dumnezeu fericită.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+
+Ceea ce ai născut pe Făcătorul de bine, Care este pricina bunătăților, bogăția facerii de bine izvorăște-o tuturor, că toate le poți, ca ceea ce ai născut pe Hristos cel puternic întru tărie, una preacurată.
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Și acum...</h5>
+
+            <!-- AICI INSEREAZĂ CANTAREA 3 -->
+        </div>
+
+        <!-- PAGINA 7 -->
+        <div class="page" id="page-7">
+            <p>Fiind cuprins de neputințe cumplite și de chinurile bolilor, tu, Fecioară, ajută-mi; cer ajutorul tău Fecioară, că pe tine te știu comoară de tămăduiri neîmpuținată și necheltuită, ceea ce ești cu totul fără de prihană.</p>
+
+<p>Izbăvește de nevoi pe robii tăi, Născătoare de Dumnezeu, că toți, după Dumnezeu, la tine scăpăm, ca și către un zid nestricat și folositor.</p>
+
+<p>Caută cu milostivire, cu totul lăudată, Născătoare de Dumnezeu, spre necazul cel cumplit al trupului meu și vindecă durerea sufletului meu.</p>
+
+<p>Ceea ce ești rugătoare caldă și zid nebiruit, izvor de milă și lumii scăpare, cu dinadinsul strigăm către tine, Născătoare de Dumnezeu, Stăpână: Vino degrab și ne izbăvește pe noi din nevoi, ceea ce ești singura grabnic folositoare.<p>
+            <!-- AICI INSEREAZĂ STIHURILE DUPĂ CÂNTAREA A 3-A (Izbăvește de nevoi..., Caută cu milostivire...) -->
+        </div>
+
+        <!-- PAGINA 8 -->
+        <div class="page" id="page-8">
+            <p>Am auzit, Doamne, taina rânduielii Tale, am înțeles lucrurile Tale și am preaslăvit Dumnezeirea Ta.</p>
+
+<p>Tulburarea patimilor mele și viforul greșelilor mele alină-le, ceea ce ai născut pe Domnul Îndreptătorul, dumnezeiască Mireasă.</p>
+
+<p>Chemând eu adâncul milostivirii tale, dă-mi-l mie, ceea ce ai născut pe Cel milostiv și pe Mântuitorul tuturor celor ce te laudă pe tine.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+
+<p>Îndulcindu-ne, Preacurată, cu darurile tale, ție cântare de mulțumire cântăm, știindu-te pe tine Maica lui Dumnezeu.</p>
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Și acum...</h5>
+
+<p>Nădejde și întărire și zid de scăpare nemișcat câștigându-te pe tine, ceea ce ești întru tot lăudată, de tot necazul ne izbăvim.</p>
+            <!-- AICI INSEREAZĂ CANTAREA 4 -->
+        </div>
+
+        <!-- PAGINA 9 -->
+        <div class="page" id="page-9">
+            <p>Luminează-ne pe noi, Doamne, cu poruncile Tale și cu brațul Tău cel înalt; pacea Ta dă-ne-o nouă, lubitorule de oameni.</p>
+
+<p>Umple, Preacurată, de veselie viața mea, dăruindu-mi bucuria ta cea nestricată, ceea ce ai născut pricina veseliei.</p>
+
+<p>Izbăvește-ne pe noi din nevoi, Născătoare de Dumnezeu, Curată, ceea ce ai născut izbăvirea cea veșnică și Pacea care covârșește toată mintea.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+
+<p>Risipește negura greșelilor mele, dumnezeiască Mireasă, cu strălucirea luminii tale, ceea ce ai născut lumina cea dumnezeiască și veșnică.</p>
+
+<h5 style="color: #d4af37; text-align: center; font-size: 13px;">Și acum...</h5>
+
+<p>Tămăduiește, Curată, neputința sufletului meu, învrednicindu-mă cercetării tale, și sănătate, cu rugăciunile tale, dăruiește-mi.</p>
+            <!-- AICI INSEREAZĂ CANTAREA 5 -->
+        </div>
+
+        <!-- PAGINA 10 -->
+        <div class="page" id="page-10">
+            <p style="font-size: 15px;">Rugăciunea mea voi vărsa către Domnul și Lui voi spune scârbele mele; că s-a umplut sufletul meu de răutăți și viața mea de iad s-a apropiat, și ca Iona mă rog: Dumnezeule, din stricăciune scoate-mă.
+Cum a mântuit de moarte și de putrejune firea mea care era ținută de moarte și de putrejune, pe Sine Însuși dându-Se spre moarte, Fecioară, roagă-te Fiului și Dumnezeului tău, să mă izbăvească și de răutățile vrăjmașului.
+Pe tine te știu folositoare și păzitoare prea tare vieții mele, Fecioară, care risipești tulburarea năpastelor și izgonești asupririle diavolilor; de aceea, mă rog totdeauna: izbăvește-mă de stricăciunea chinurilor mele.</p>
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+<p style="font-size: 15px;">Pe tine, Fecioară, te-am dobândit ca un zid de scăpare și sufletelor mântuire desăvârșită și desfătare întru necazuri; de lumina ta pururea ne bucurăm, o, Stăpână; și acum ne izbăvește din nevoi și din chinuri.</p>
+<h6 style="color: #d4af37; text-align: center; font-size: 11px;">Și acum...</h6>
+<p style="font-size: 15px;">Acum zac în patul durerilor și nu este tămăduire trupului meu; ci mă rog ție, celei bune, care ai născut pe Dumnezeu, Mântuitorul lumii și Tămăduitorul bolilor, ridică-mă din stricăciunea durerilor.
+Izbăvește de nevoi pe robii tăi, Născătoare de Dumnezeu, că toți, după Dumnezeu, la tine scăpăm, ca și către un zid nestricat și folositor.
+Preacurată, ceea ce în zilele din urmă, prin cuvânt, negrăit ai născut pe Cuvântul, roagă-te Lui, ca una ce ai îndrăznire de Maică.</p>
+<h5 style="color: #d4af37; text-align: center; font-size: 10px;">Doamne, miluiește,</h5>
+<h5 style="color: #d4af37; text-align: center; font-size: 8px;">(de trei ori)</h5>
+<h6><p style="color: #d4af37; text-align: center; font-size: 9.7px;">Slavă... Și acum...</p></h6>
+
+            <!-- AICI INSEREAZĂ CANTAREA 6 -->
+        </div>
+
+        <!-- PAGINA 11 -->
+        <div class="page" id="page-11">
+            <p>Ceea ce ești păzitoarea creștinilor nebiruită și rugătoare neîncetată către Făcătorul, nu trece cu vederea glasurile cele de rugăciune ale păcătoșilor; ci sârguiește ca o bună spre ajutorul nostru, care cu credință ne rugăm ție: grăbește spre rugăciune și te nevoiește spre îmblânzire, apărând pururea pe cei ce te cinstesc pe tine, Născătoare de Dumnezeu.</p>
+
+<h6><p style="color: #d4af37; text-align: center;">Prochimen, glasul al 4-lea</p></h6>
+
+<h5><p style="color: #d4af37; text-align: center;">Pomeni-voi numele Tău în tot neamul și neamul.</p></h5>
+
+<h6><p style="color: #d4af37; text-align: center;">(de trei ori)</p></h6>
+
+<h5><p style="color: #d4af37; text-align: center;">Stih: Ascultă, fiică, și vezi și pleacă urechea ta și uită poporul tău și casa părintelui tău.
+</p></h5>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă..., glasul al 2-lea</p></h5>
+Părinte, Cuvinte și Duhule, Treime Sfântă, curățește mulțimea greșelilor noastre.
+<h5><p style="color: #d4af37; text-align: center;">Și acum...</p></h5>
+Pentru rugăciunile Născătoarei de Dumnezeu, Milostive, curățește mulțimea greșelilor noastre.
+<h5><p style="color: #d4af37; text-align: center;">Stih: Miluiește-ne, Dumnezeule, după mare mila Ta și după mulțimea îndurărilor Tale, curățește fărădelegile noastre.</p></h5>
+
+            <!-- AICI INSEREAZĂ CONDACUL ȘI PROCHIMENUL -->
+        </div>
+
+        <!-- PAGINA 12 -->
+        <div class="page" id="page-12">
+            <p>Ajutorului omenesc nu ne încredința pe noi, Preasfântă Stăpână, ci primește rugăciunea robilor tăi, că necazurile ne cuprind și nu putem răbda săgetările diavolilor; acoperământ nu ne-am agonisit nicăieri unde să scăpăm noi, păcătoșii, pururea fiind biruiți; mângâiere nu avem afară de tine, Stăpâna lumii. Nădejdea și folositoarea credincioșilor, nu trece rugăciunile noastre, ci le fă de folos.</p>
+
+<p>Nimeni din cei ce aleargă la tine nu iese rușinat, Născătoare de Dumnezeu Fecioară; ci, cerând dar bun, primește dăruirea către cererea cea de folos.</p>
+
+Ajutătoarea celor necăjiți, întărirea celor neputincioși fiind, izbăvește pe robii tăi, Născătoare de Dumnezeu Fecioară, pacea celor din războaie, liniștea celor înviforați, singura folositoare a credincioșilor.
+            <!-- AICI INSEREAZĂ STIHIRILE (Ajutorului omenesc nu ne încredința...) -->
+        </div>
+
+        <!-- PAGINA 13 -->
+        <div class="page" id="page-13">
+            <p>Tinerii cei ce au mers din Iudeea în Babilon oarecând, cu credința Treimii, văpaia cuptorului au călcat-o, cântând: Dumnezeul părinților noștri, bine ești cuvântat.</p>
+<p>Când ai vrut să rânduiești mântuirea noastră, Mântuitorule, Te-ai sălășluit în pântecele Fecioarei, pe care ai arătat-o folositoare lumii. Bine ești cuvântat, Dumnezeul părinților noștri.</p>
+<p>Maică preacurată, roagă pe Domnul milei pe Care L-ai născut, să izbăvească de păcate și de întinăciune sufletească pe cei ce cântă cu credință: Bine ești cuvântat, Dumnezeul părinților noștri.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...</p></h5>
+
+<p>Comoară de mântuire și izvor de curăție, turn de tărie și ușă de pocăință, pe ceea ce Te-a născut pe Tine ai arătat-o celor ce cântă: Bine ești cuvântat, Dumnezeul părinților noștri.</p>
+<h5><p style="color: #d4af37; text-align: center;">Și acum...</p></h5>
+<p>De neputințele trupești și de păcatele sufletești pe cei ce vin cu dragoste către acoperământul tău cel dumnezeiesc, învrednicește-i să fie tămăduiți, Născătoare de Dumnezeu, care ai născut nouă pe Mântuitorul Hristos.</p>
+          
+  <!-- AICI INSEREAZĂ CANTAREA 7 -->
+        </div>
+
+        <!-- PAGINA 14 -->
+        <div class="page" id="page-14">
+<p>Nu trece cu vederea pe cei ce au trebuință de ajutor de la tine, Fecioară, pe cei care cântă și te preaînalță întru toți vecii.</p>
+
+<p>Tămăduiește neputințele sufletului meu și durerile trupului meu, Fecioară, ca să te slăvesc, Curată, în veci.</p>
+
+<p>Binecuvântăm pe Tatăl și pe Fiul și pe Sfântul Duh, Domnul.</p>
+
+<p>Bogăție de tămăduiri verși, Fecioară, celor ce te laudă cu credință și preaînalță nașterea ta cea de negrăit.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Și acum...</p></h5>
+
+<p>Tu izgonești asuprirea și năvălirea patimilor, Fecioară; pentru aceea te lăudăm întru toți vecii.</p>
+
+<p>Să lăudăm, bine să cuvântăm și să ne închinăm Domnului, cântându-I și preaînălțându-L pe Dânsul întru toți vecii.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Irmosul:</p></h5>
+
+Pe împăratul ceresc, pe Care Îl laudă oștile îngerești, lăudați-L și-L preaînălțați întru toți vecii.</h2>
+            <!-- AICI INSEREAZĂ CANTAREA 8 -->
+        </div>
+
+        <!-- PAGINA 15 -->
+        <div class="page" id="page-15">
+<p>Cu adevărat, Născătoare de Dumnezeu, te mărturisim pe tine, Fecioară curată, noi cei izbăviți prin tine, slăvindu-te cu cetele cele fără de trup.</p>
+<p>Să nu întorci fața ta de la izvorul lacrimilor mele, Fecioară, care ai născut pe Hristos, Cel Ce a șters toată lacrima de pe fața tuturor.</p>
+<p>Umple de bucurie inima mea, Fecioară, ceea ce ai primit plinirea bucuriei și ai pierdut grija păcatului,</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă...:</p></h5>
+<p>Cu strălucirea luminii tale luminează. Fecioară, negura neștiinței și o izgonește de la cei ce cu credință te mărturisesc pe tine Născătoare de Dumnezeu.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Și acum...</p></h5>
+<p>Pe mine, care zac de boală în locul cel de răutate, tămăduiește-mă, Fecioară, și mă întoarce dintru nesănătate în sănătate.</p>
+            
+<!-- AICI INSEREAZĂ CANTAREA 9 -->
+        </div>
+
+        <!-- PAGINA 16 -->
+        <div class="page" id="page-16">
+<p>O, prealuminate nor, Maica lui Dumnezeu, pe cei ce se luptă cu noi surpă-i cu dreapta ta cea stăpânitoare și atotputernică, și celor ce sunt în scârbe le ajută, pe cei asupriți îi mântuiește și dezleagă de păcate pe cei ce se roagă ție, că toate le poți câte le voiești.</p>
+           
+ <!-- AICI INSEREAZĂ CATAVASIA (O, prealuminate nor...) -->
+        </div>
+
+        <!-- PAGINA 17 -->
+        <div class="page" id="page-17">
+<p>Cuvine-se cu adevărat să te fericim, Născătoare de Dumnezeu, cea pururea fericită și preanevinovată și Maica Dumnezeului nostru. Ceea ce ești mai cinstită decât heruvimii și mai slăvită, fără de asemănare, decât serafimii, care fără stricăciune pe Dumnezeu-Cuvântul ai născut, pe tine, cea cu adevărat Născătoare de Dumnezeu, te mărim.</p>
+            
+<!-- AICI INSEREAZĂ MEGALINARIA -->
+        </div>
+
+        <!-- PAGINA 18 -->
+        <div class="page" id="page-18">
+<p>Pentru toți care scapă cu credință sub acoperământul tău cel puternic te rogi, ceea ce ești bună; că noi păcătoșii nu avem altă izbăvire către Dumnezeu în nevoi și în necazuri, pururea fiind încărcați cu multe păcate, Maica Dumnezeului Celui de sus. Pentru aceea, cădem înaintea ta să ne izbăvești pe noi, robii tăi, din toate nevoile.
+<h5><p style="color: #d4af37; text-align: center;">Stih: Pomeni-voi numele tău în tot neamul și neamul.  </p></h5>
+<p>Tuturor scârbiților bucurie și asupriților folositoare și flămânzilor dătătoare de hrană, străinilor mângâiere, celor învăluiți adăpostire, bolnavilor cercetare, celor neputincioși acoperământ și sprijinire, toiag bătrâneților, tu ești, Preacurată, Maica Dumnezeului Celui de sus; pentru aceea, ție ne rugăm: grăbește și miluiește pe robii tăi.</p>
+           
+	<!-- AICI INSEREAZĂ PRIMA PARTE A STIHIRILOR -->
+        </div>
+
+        <!-- PAGINA 19 -->
+        <div class="page" id="page-19">
+<h5><p style="color: #d4af37; text-align: center;">Stih: Ascultă, fiică, și vezi și pleacă urechea ta și uită poporul tău și casa părintelui tău.</p></h5>
+<p>Bucură-te, Fecioară preacurată; bucură-te, cinstitul sceptru al Împăratului Hristos; bucură-te, ceea ce ai crescut strugurele cel de taină; bucură-te, ușa cerului și rugul cel nears; bucură-te, lumină a toată lumea; bucură-te, bucuria tuturor; bucură-te, mântuirea credincioșilor; bucură-te, apărătoarea și scăparea tuturor creștinilor, Stăpână.</p>
+
+<h5><p style="color: #d4af37; text-align: center;">Slavă... Și acum...</p></h5>
+
+<p>Bucură-te, lauda a toată lumea; bucură-te, casa Domnului; bucură-te, munte umbrit; bucură-te, scăpare; bucură-te, ceea ce ești sfeșnic de aur; <p>bucură-te, Preacurată, care ești slava creștinilor; bucură-te, Marie, Maica lui Hristos Dumnezeu;
+<p>bucură-te, rai; bucură-te, masa cea dumnezeiască; bucură-te, biserică; bucură-te, năstrapă de aur; bucură-te, bucuria tuturor!</h8><p>
+            <!-- AICI INSEREAZĂ A DOUA PARTE A STIHIRILOR -->
+        </div>
+
+        <!-- PAGINA 20 -->
+        <div class="page" id="page-20">
+<p>Pe ceea ce este mai înaltă decât cerurile și mai curată decât strălucirile soarelui, care ne-a izbăvit pe noi din blestem, pe Stăpâna lumii, cu cântări să o cinstim.</p>  
+<p>Pentru păcatele mele cele multe mi se bolnăvește trupul, și slăbește sufletul meu; la tine scap, ceea ce ești plină de daruri; nădejdea tuturor celor fără de nădejde, tu îmi ajută.</p>
+<p>Stăpâna și Maica Izbăvitorului, primește rugăciunea nevrednicilor robilor tăi, ca să fii folositoare către Cel Ce S-a născut din tine, o, Stăpâna lumii, fii mijlocitoare.</p>
+<p>Cântăm cu osârdie acum cântare de bucurie ție, celei întru tot lăudate, Născătoare de Dumnezeu. Cu Înaintemergătorul și cu toți Sfinții, roagă-L, Născătoare de Dumnezeu, ca să ne mântuiască pe noi.</p>
+            <!-- AICI INSEREAZĂ A TREIA PARTE A STIHIRILOR -->
+        </div>
+
+        <!-- PAGINA 21 -->
+        <div class="page" id="page-21">
+<p>Toate oștile îngerești, Înaintemergătorul Domnului, cei doisprezece Apostoli și toți Sfinții, împreună cu Născătoarea de Dumnezeu, faceți rugăciuni ca să ne mântuiască pe noi.</p>
+
+<p>Milostivă fii mie, smeritului, că afară de tine altă scăpare nu știu, eu cel ce sunt plin de tot felul de păcate. Miluiește-mă, nădejdea creștinilor.</p>
+            <!-- AICI INSEREAZĂ RUGĂCIUNILE DE ÎNCHEIERE (Toate oștile îngerești...) -->
+        </div>
+
+      <!-- PAGINA 22 -->
+<div class="page" id="page-22">
+    <h2>Rugăciune</h2>
+<p>Ceea ce singură ești bucuria celor necăjiți și ocrotirea celor nedreptățiți, mângâierea celor ce plâng și ajutătoarea celor neajutorați, cercetătoarea celor neputincioși și acoperământul și sprijinul celor ce se chinuiesc; liman celor înviforați și toiag orbilor, povățuitoare celor rătăciți și scăpare tare celor din nevoi, Născătoare de Dumnezeu, cu totul fără de prihană, ia aminte la această ticăloasă și netrebnică rugăciune a mea, pe care o aduc ție, întru strângerea inimii și mă izbăvește de viforul cel rău al gândurilor.</p>
+<p>Scapă-mă pe mine din somnul cel greu care mi s-a pricinuit mie din lenevie și smulge și obiceiul cel rău al patimilor.</p>
+<p>Și precum știi, mântuiește-mă pe mine, netrebnicul robul tău, cel ce întru tine, după Dumnezeu, mi-am pus nădejdea mântuirii mele.</p>
+</div>
+
+        <!-- PAGINA 23 -->
+<div class="page" id="page-23">
+    
+<p>Dă-mi mie, Preacurată, cu osârdie să fac poruncile Fiului tău și Dumnezeului nostru, și să păzesc întotdeauna așezămintele Lui cele mântuitoare. Și mă întărește ca, având cuget veghetor și minte trează, să întâmpin doxologiile Lui cele bineprimite.</p>
+<p>Că întru tine, pricinuitoarea bunătăților și ajutătoarea noastră, nădăjduind, aduc această cerere.</p>
+<p>Deci, să nu cad din nădejdea cea către tine, Preasfântă, nici să mă întorc smerit și rușinat. Ci să aflu prin tine, de Dumnezeu dăruită Stăpână, sfârșit cererilor mele.</p>
+<p>Ca întotdeauna, ca pe o ajutătoare tare a noastră, a păcătoșilor, și împlinitoare a cererilor noastre, să te laud pe tine, acum și pururea și în vecii vecilor.</p>
+<h1><p style="color: #d4af37; text-align: center;">Amin.</p></h1>
+
+</div>
+
+        <!-- PAGINA 24 (SFÂRȘIT) -->
+        <div class="page" id="page-24">
+          
+            <img class="icon-final" src="https://basilica.ro/wp-content/uploads/2015/08/cele-mai-vechi-icoane-ale-maicii.jpg" alt="Icoana Maicii Domnului">
+        </div>
+
+    </div>
+
+    <!-- ZONA DE NAVIGARE -->
+    <div class="navigation">
+        <div class="controls">
+            <button class="btn-nav" id="btn-prev" onclick="changePage(-1)">&#10094;</button>
+            <button class="btn-nav" id="btn-next" onclick="changePage(1)">&#10095;</button>
+        </div>
+        <div class="page-counter" id="page-indicator">1 / 23</div>
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 23; // Pagini de text (Pagina 24 este icoana de final)
+
+    function updatePage() {
+        // Ascunde toate paginile
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+
+        // Afiseaza pagina curenta
+        const activePage = document.getElementById(`page-${currentPage}`);
+        if(activePage) {
+            activePage.classList.add('active');
+        }
+
+        // Actualizeaza indicatorul si butoanele
+        const indicator = document.getElementById('page-indicator');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+
+        if (currentPage <= totalPages) {
+            indicator.textContent = `${currentPage} / ${totalPages}`;
+        } else {
+            indicator.innerHTML = '<span style="font-size:0.7rem;">☦️</span>';
+        }
+
+        btnPrev.disabled = (currentPage === 1);
+        btnNext.disabled = (currentPage === totalPages + 1);
+    }
+
+    function changePage(direction) {
+        currentPage += direction;
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages + 1) currentPage = totalPages + 1;
+        updatePage();
+    }
+
+    // Suport navigare din tastatură (Săgeți stânga/dreapta)
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "ArrowLeft") {
+            changePage(-1);
+        } else if (event.key === "ArrowRight") {
+            changePage(1);
+        }
+    });
+
+    // Initializare
+    updatePage();
+</script>
+
+</body>
+</html>
