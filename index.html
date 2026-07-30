@@ -34,6 +34,16 @@
             box-sizing: border-box;
         }
 
+        /* Imaginea din PC - Setată la 150x150px, discretă și aliniată */
+        .custom-cross-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 0 auto 25px auto;
+            display: block;
+            opacity: 0.75; /* Opacitate discretă pentru a nu obosi ochii */
+        }
+
         /* Stilul textului rugăciunii */
         .prayer-text {
             font-size: 1.35rem;
@@ -51,20 +61,21 @@
             margin: 0 auto;
         }
 
-        /* Săgețile stânga/dreapta - optimizate pentru ecran tactil */
+        /* Săgețile stânga/dreapta - Modificate pentru un efect vizual discret */
         .arrow {
-            font-size: 2.5rem; /* Dimensiune mărită pentru vizibilitate pe mobil */
-            color: #d4af37; /* Culoare aurie/chihlimbar stins */
+            font-size: 2.5rem; 
+            color: #cccccc; /* Culoare de bază stabilă, alb-gri */
             cursor: pointer;
-            transition: color 0.2s ease;
             background: none;
             border: none;
-            padding: 15px 25px; /* Zonă de atingere extinsă pentru degete */
-            touch-action: manipulation; /* Optimizează comportamentul la tap pe mobil */
+            padding: 15px 25px; 
+            touch-action: manipulation; 
+            transition: color 0.1s ease;
         }
 
-        .arrow:hover {
-            color: #fff;
+        /* La apăsare pe ecran devine mai puțin vizibilă (gri închis) */
+        .arrow:active {
+            color: #555555; 
         }
 
         .arrow:disabled {
@@ -78,6 +89,23 @@
             color: #a0a0a0;
             margin-top: 20px;
             font-family: sans-serif;
+        }
+
+        /* Bara de progres subțire (Stil YouTube) */
+        .progress-bar-container {
+            width: 100%;
+            height: 3px;
+            background-color: #333333;
+            margin-top: 15px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0.66%; /* Valoarea inițială pentru 1/150 */
+            background-color: #1a4570; /* Albastru închis */
+            transition: width 0.2s ease-in-out;
         }
 
         /* Ecranul final cu icoana */
@@ -119,7 +147,7 @@
             color: #262626;
         }
 
-        /* Ajustări specifice pentru ecrane de telefon mobil (ecrane sub 480px) */
+        /* Ajustări specifice pentru ecrane de telefon mobil */
         @media (max-width: 480px) {
             body {
                 padding: 10px;
@@ -129,8 +157,14 @@
                 padding: 30px 15px;
             }
 
+            .custom-cross-image {
+                width: 110px; /* Se adaptează ușor pentru ecranele înguste de telefon */
+                height: 110px;
+                margin-bottom: 20px;
+            }
+
             .prayer-text {
-                font-size: 1.15rem; /* Dimensiune text adaptată pentru ecrane înguste */
+                font-size: 1.15rem; 
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
@@ -146,7 +180,7 @@
             }
 
             .icon-image {
-                max-height: 350px; /* Limitează înălțimea icoanei pe ecrane foarte scurte */
+                max-height: 350px; 
             }
         }
     </style>
@@ -156,6 +190,9 @@
     <div class="prayer-container">
         <!-- Zona interactivă pentru cele 150 de pagini -->
         <div id="prayer-content">
+            <!-- Imaginea încărcată de tine pe GitHub -->
+            <img class="custom-cross-image" src="ICXCNIKA.png" alt="Sfânta Cruce">
+
             <div class="prayer-text">
                 Născătoare de Dumnezeu, Fecioară, bucură-te! Ceea ce ești plină de har, Marie, Domnul este cu tine. Binecuvântată ești tu între femei și binecuvântat este rodul pântecelui tău, că ai născut pre Mântuitorul sufletelor noastre.
             </div>
@@ -166,6 +203,11 @@
             </div>
             
             <div class="page-counter" id="page-display">1 / 150</div>
+
+            <!-- Zona barei de progres -->
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
         </div>
 
         <!-- Ecranul final care apare după pagina 150 -->
@@ -184,24 +226,29 @@
         const finalContent = document.getElementById('final-content');
         const pageDisplay = document.getElementById('page-display');
         const prevBtn = document.getElementById('prev-btn');
+        const progressFill = document.getElementById('progress-fill');
+
+        function updateProgress() {
+            // Actualizează lățimea bării în funcție de numărul paginii
+            const percentage = (currentPage / totalPages) * 100;
+            progressFill.style.width = percentage + '%';
+        }
 
         function changePage(direction) {
             currentPage += direction;
 
-            // Dezactivează săgeata stânga dacă suntem la prima pagină
             if (currentPage === 1) {
                 prevBtn.disabled = true;
             } else {
                 prevBtn.disabled = false;
             }
 
-            // Dacă trecem de pagina 150, afișăm icoana de sfârșit
             if (currentPage > totalPages) {
                 prayerContent.style.display = 'none';
                 finalContent.style.display = 'block';
             } else {
-                // Actualizăm numărul paginii curente
                 pageDisplay.textContent = currentPage + ' / ' + totalPages;
+                updateProgress();
             }
         }
 
@@ -209,12 +256,14 @@
             currentPage = 1;
             pageDisplay.textContent = '1 / 150';
             prevBtn.disabled = true;
+            updateProgress();
             finalContent.style.display = 'none';
             prayerContent.style.display = 'block';
         }
 
-        // Inițializare la prima încărcare
+        // Configurare inițială
         prevBtn.disabled = true;
+        updateProgress();
     </script>
 
 </body>
