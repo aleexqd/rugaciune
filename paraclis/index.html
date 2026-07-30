@@ -519,7 +519,22 @@ Pe împăratul ceresc, pe Care Îl laudă oștile îngerești, lăudați-L și-L
             changePage(1);
         }
     });
+function goToPravila() {
 
+    const icon = document.querySelector(".icon-final");
+
+    if (navigator.vibrate) {
+        navigator.vibrate(15);
+    }
+
+    icon.style.transition = "all .2s ease";
+    icon.style.transform = "scale(1.03)";
+    icon.style.boxShadow = "0 0 35px rgba(212,175,55,.9)";
+
+    setTimeout(() => {
+        window.location.href = "../pravila/";
+    }, 200);
+}
     // Initializare
     updatePage();
 </script>
